@@ -1,3 +1,6 @@
  ApiRestCoreProducts/bin/
+  ApiRestCoreProducts/bin/Debug/
+  ApiRestCoreProducts/bin/Debug/net5.0/
  ApiRestCoreProducts/obj/
- 
+  ApiRestCoreProducts/obj/Debug/
+  ApiRestCoreProducts/obj/Debug/net5.0/
