@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ApiRestCoreProducts.Data;
+using System.Reflection;
+using System.IO;
 
 namespace ApiRestCoreProducts
 {
@@ -32,10 +34,32 @@ namespace ApiRestCoreProducts
 			services.AddControllers();
 			services.AddSwaggerGen(c =>
 			{
-				c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiRestCoreProducts", Version = "v1" });
+				c.SwaggerDoc("v1", new OpenApiInfo
+				{
+					Version = "v1",
+					Title = "Product API",
+					Description = "A simple example ASP.NET Core API Rest",
+					//TermsOfService = new Uri("https://example.com/terms"),
+					Contact = new OpenApiContact
+					{
+						Name = "Samuel Hurtado",
+						Email = string.Empty,
+						Url = new Uri("https://github.com/samuelhurtado20"),
+					},
+					//License = new OpenApiLicense
+					//{
+					//	Name = "Use under LICX",
+					//	Url = new Uri("https://example.com/license"),
+					//}
+				});
+
+				// Set the comments path for the Swagger JSON and UI.
+				var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+				var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+				c.IncludeXmlComments(xmlPath);
 			});
 
-		    services.AddDbContext<ApiRestCoreProductsContext>(options =>
+			services.AddDbContext<ApiRestCoreProductsContext>(options =>
 		            options.UseSqlServer(Configuration.GetConnectionString("ApiRestCoreProductsContext")));
 		}
 

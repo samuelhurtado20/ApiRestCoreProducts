@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiRestCoreProducts</name>
+    </assembly>
+    <members>
+        <member name="T:ApiRestCoreProducts.Controllers.ProductsController">
+            <summary>
+            ProductsController
+            </summary>
+        </member>
+        <member name="M:ApiRestCoreProducts.Controllers.ProductsController.#ctor(ApiRestCoreProducts.Data.ApiRestCoreProductsContext)">
+            <summary>
+            ProductsController
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ApiRestCoreProducts.Controllers.ProductsController.GetProduct">
+            <summary>
+            Get a list of products
+            </summary>
+            <returns>List of products</returns>
+            <response code="401">Unauthorized.</response>
+            <response code="200">OK. Returns the requested object.</response>
+            <response code="400">BadRequest.</response>
+            <response code="404">NotFound. The requested object was not found.</response>
+        </member>
+        <member name="M:ApiRestCoreProducts.Controllers.ProductsController.GetProduct(System.Guid)">
+            <summary>
+            Get a product by id
+            </summary>
+            <returns>Single product</returns>
+            <param name="id">Product ID (GUID).</param>
+            <response code="200">OK. Returns the requested object.</response>
+            <response code="400">BadRequest.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="404">NotFound. The product was not found.</response>
+        </member>
+        <member name="M:ApiRestCoreProducts.Controllers.ProductsController.PutProduct(System.Guid,ApiRestCoreProducts.Models.Product)">
+            <summary>
+            Update a single product
+            </summary>
+            <param name="id">Product ID (GUID).</param>
+            <param name="product">Product to update.</param>
+            <returns>No content response</returns>
+            <response code="204">NoContent. Product updated. No content response.</response>
+            <response code="400">BadRequest.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="404">NotFound. The product was not found.</response>
+        </member>
+        <member name="M:ApiRestCoreProducts.Controllers.ProductsController.PostProduct(ApiRestCoreProducts.Models.Product)">
+            <summary>
+            Insert a single product
+            </summary>
+            <param name="product">Product to create.</param>
+            <returns>The new created product</returns>
+            <response code="200">OK. Returns the product created.</response>
+            <response code="400">BadRequest.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="404">NotFound. The product was not found.</response>
+        </member>
+        <member name="M:ApiRestCoreProducts.Controllers.ProductsController.DeleteProduct(System.Guid)">
+            <summary>
+            Delete a product by id
+            </summary>
+            <param name="id">Product ID (GUID).</param>
+            <returns>No content response</returns>
+            <response code="204">NoContent. Product deleted. No content response.</response>
+            <response code="401">Unauthorized.</response>
+            <response code="404">NotFound. The product was not found.</response>
+        </member>
+        <member name="M:ApiRestCoreProducts.Controllers.ProductsController.ProductExists(System.Guid)">
+            <summary>
+            Check if a product exists
+            </summary>
+            <param name="id">Product ID (GUID).</param>
+            <returns>true if the product exists</returns>
+        </member>
+        <member name="T:ApiRestCoreProducts.Models.Product">
+            <summary>
+            Product model
+            </summary>
+        </member>
+        <member name="T:ApiRestCoreProducts.Validations.ProductValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiRestCoreProducts.Validations.ProductValidator.#ctor">
+            <summary>
+            Validation rules for: Product
+            </summary>
+        </member>
+    </members>
+</doc>

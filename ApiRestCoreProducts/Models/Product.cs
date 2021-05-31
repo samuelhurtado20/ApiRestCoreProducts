@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ApiRestCoreProducts.Models
 {
+	/// <summary>
+	/// Product model
+	/// </summary>
 	public class Product
 	{
 		public Guid Id { get; set; }
